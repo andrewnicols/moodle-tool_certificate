@@ -40,6 +40,9 @@ script:
 - pwd
 - moodle-plugin-ci phplint
 - pwd
+- ls -Al moodle
+- ls -Al moodle/node_modules
+- ls -Al moodle/node_modules/.bin
 - moodle-plugin-ci mustache
 - pwd
 - find . -name '.env'
