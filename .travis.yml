@@ -14,8 +14,6 @@ cache:
   - $HOME/.npm
 
 php:
-  - 7.2
-  - 7.3
   - 7.4
 
 env:
@@ -23,7 +21,6 @@ env:
   - MOODLE_BRANCH=MOODLE_39_STABLE
   matrix:
   - DB=pgsql
-  - DB=mysqli
 
 before_install:
 - phpenv config-rm xdebug.ini
@@ -36,6 +33,8 @@ install:
 - pwd
 - moodle-plugin-ci install --no-init
 - find . -name '.env'
+- cat ./ci/.env
+- export
 
 script:
 - pwd
@@ -43,3 +42,6 @@ script:
 - pwd
 - moodle-plugin-ci mustache
 - pwd
+- find . -name '.env'
+- cat ./ci/.env
+- export
